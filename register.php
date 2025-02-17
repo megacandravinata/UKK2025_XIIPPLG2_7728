@@ -54,7 +54,7 @@
 </div>
 
 <footer class="d-flex justify-content-center border-top mt-3 bg-light fixed-bottom">
-    <p>&copy; To Do List | Mega Candra Vinata</p>
+    <p>&copy; To Do List testt | Mega Candra Vinata</p>
 </footer>
    
 <script type="text/javascript" src="asset/js/bootstrap.min.js"></script>
