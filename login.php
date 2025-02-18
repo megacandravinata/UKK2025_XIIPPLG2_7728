@@ -41,7 +41,7 @@
                         </div>
                     </form>
                     <hr>
-                    <p>Belum punya akun? <a href="register.php">Dftar disini!</a></p>
+                    <p>Belum punya akun? <a href="register.php">Daftar disini!</a></p>
                 </div>
             </div>
         </div>
@@ -51,6 +51,7 @@
 <footer class="d-flex justify-content-center border-top mt-3 bg-light fixed-bottom">
     <p>&copy; To Do List | Mega Candra Vinata</p>
 </footer>
+                  
     
 </body>
 </html>
