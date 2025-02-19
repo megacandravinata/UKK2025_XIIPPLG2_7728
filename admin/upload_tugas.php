@@ -51,16 +51,17 @@ if ($_SESSION['status'] != 'login') {
                         <label class="form-label">List Tugas</label>
                         <select class="form-control" name="id">
                             <?php
-                            $sql_tugas = mysqli_query($koneksi, "SELECT * FROM categories WHERE userid='$userid'");
-                            while($data_tugas = mysqli_fetch_array($sql_tugas                   )){ ?>
+                            $sql_tugas = mysqli_query($koneksi, "SELECT * FROM tugas WHERE user_id='$user_id'");
+                            while($data_tugas = mysqli_fetch_array($sql_tugas)){ ?>
                             <option value="<?php echo $data_tugas['id'] ?>"><?php echo
-                             $data_tugas['category'] ?></option>
+                             $data_tugas['tugas'] ?></option>
                         <?php } ?>
                         </select>
                         <label class="form-label">File</label>
                         <input type="file" class="form-control" name="lokasifile" require>
+                        <button type="submit" class="btn btn-primary mt-2" name="tambah">Tambah tugas</button>
                     </form>
-                    <button type="submit" class="btn btn-primary mt-2" name="tambah">Tambah tugas</button>
+                    
                 </div>
             </div>
         </div>
@@ -80,13 +81,13 @@ if ($_SESSION['status'] != 'login') {
                             </tr>
                         </thead>
                         <tbody>
-    <?php 
-    $no = 1;
-    $userid = $_SESSION['userid']; 
-    $sql = mysqli_query($koneksi, "SELECT * FROM tugas WHERE userid='$userid'");
-    if (mysqli_num_rows($sql) > 0) {
-        while ($data = mysqli_fetch_array($sql)) {
-    ?>
+                <!-- <?php 
+                $no = 1;
+                $userid = $_SESSION['userid']; 
+                $sql = mysqli_query($koneksi, "SELECT * FROM tugas WHERE userid='$userid'");
+                if (mysqli_num_rows($sql) > 0) {
+                    while ($data = mysqli_fetch_array($sql)) {
+                ?> -->
     <tr>
         <td><?php echo $no++; ?></td>
         <td><img src="../asset/img/<?php echo $data['lokasifile']; ?>" width="100"></td>

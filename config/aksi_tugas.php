@@ -13,11 +13,10 @@ if ($_SESSION['status'] != 'login') {
 if (isset($_POST['tambah'])) {
     $namatugas = $_POST['namatugas'];
     $mapel = $_POST['mapel'];
-    $deadline = $_POST['deadline'];
-    $tanggal = date('Y-m-d');
+    $deadline = date('Y-m-d');
     $userid = $_SESSION['userid'];
 
-    $sql = mysqli_query($koneksi, "INSERT INTO tugas VALUES('','$namatugas','$mapel','$deadline','$tanggal','$userid')");
+    $sql = mysqli_query($koneksi, "INSERT INTO tugas  VALUES('$namatugas','$mapel','$deadline','$userid')");
     echo "<script>
     alert ('Data berhasil disimpan');
     location.href='../admin/tugas.php';
@@ -48,7 +47,7 @@ if (isset($_POST['edit'])) {
 if (isset($_POST['hapus'])) {
     $albumid = $_POST['tugasid'];
 
-    $sql = mysqli_query($koneksi, "DELETE FROM album WHERE albumid='$albumid'");
+    $sql = mysqli_query($koneksi, "DELETE FROM tugas WHERE tugasid='$tugasid'");
     echo "<script>
     alert ('Data berhasil dihapus');
     location.href='../admin/tugas.php';

@@ -72,12 +72,11 @@ if ($_SESSION['status'] != 'login') {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
-                            $no = 1;
-                            $userid = $_SESSION['userid'];
-                            $sql = mysqli_query($koneksi, "SELECT * FROM tugas WHERE userid='$userid'");
-                            while ($data = mysqli_fetch_array($sql)) {
-                            ?>
+                                <?php
+                                $no = 1;$userid = $_SESSION['userid'];
+                                $query = mysqli_query($koneksi, "SELECT * FROM tugas");
+                                while($data = mysqli_fetch_array($query)){
+                                  ?>
                             <tr>
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $data['namatugas'] ?></td>
